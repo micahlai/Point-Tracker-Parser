@@ -8,6 +8,8 @@ trackers = ["Previous Point Trackers (2020-24)/SPRING 2022 BOARD POINT TRACKER.c
 
 years = [1,2,2,3,3]
 
+firstName = "FIRST NAME:"
+lastName = "LAST NAME:"
 
 data = {}
 
@@ -16,7 +18,7 @@ for tracker in trackers:
     print(dataframe)
 
     for index,row in dataframe.iterrows():
-        key = f"{str(row[0]).lower().strip()} {str(row[1]).lower().strip()}"
+        key = f"{str(row[firstName]).lower().strip()} {str(row[lastName]).lower().strip()}"
         if(row["point13"].strip() != ""):
             if(key in data):
                 data[key][trackers.index(tracker)]=True
