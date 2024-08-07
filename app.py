@@ -6,6 +6,8 @@ trackers = ["Previous Point Trackers (2020-24)/SPRING 2022 BOARD POINT TRACKER.c
             "Previous Point Trackers (2020-24)/FALL 2023 - CSF Point Tracker.csv",
             "Previous Point Trackers (2020-24)/SPRING 2024 - CSF Point Tracker (1).csv"]
 
+years = [1,2,2,3,3]
+
 
 data = {}
 
@@ -21,6 +23,7 @@ for tracker in trackers:
             else:
                 data[key] = [False]*len(trackers)
                 data[key][trackers.index(tracker)]=True
+                data[key].append(years[trackers.index(tracker)]-int(row["GRADE:"].strip().removesuffix("th"))+33)
         
 
 newData = {}
